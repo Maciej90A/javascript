@@ -18,6 +18,15 @@
 //     console.log('var1 !== var2');
 // }
 
-function alertFunction(){
-    alert("Test");
+// function alertFunction(){
+//     alert("Test");
+// }
+
+function swap() {
+    let barFoo = document.getElementById("foobar");
+    if (barFoo.innerHTML === "Foo bar!") {
+        barFoo.innerHTML = "Bar foo!";
+    } else {
+        barFoo.innerHTML = "Foo bar!";
+    }
 }
