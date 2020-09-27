@@ -34,11 +34,46 @@
 //     }
 // }
 
-//16
-function validateForm() {
-    let formElement = document.forms['contactForm']['firstname'].value;
-    if (formElement === '') {
-        alert('Name must be filled out.');
-        return false;
+// 16
+// function validateForm() {
+//     let formElement = document.forms['contactForm']['firstname'].value;
+//     if (formElement === '') {
+//         alert('Name must be filled out.');
+//         return false;
+//     }
+// }
+
+// 17
+// function validateForm(formName) {
+//     let form = document.forms[formName];
+//     for (let formElement of form) {
+//         if (formElement.tagName.toLowerCase() === 'input') {
+//             if (formElement.value === '') {
+//                 alert(formElement.parentElement.innerText + 'Name must be filled out.');
+//                 return false;
+//             }
+//         }
+//     }
+// }
+
+// 18
+function validateForm(formName) {
+    let isValid = true;
+    let form = document.forms[formName];
+    for (let formElement of form) {
+        if (formElement.tagName.toLowerCase() === 'input') {
+            if (formElement.value === '') {
+                notify(formElement);
+                isValid = false;
+            } else {
+                formElement.style = "";
+            }
+        }
     }
+    return isValid;
+}
+
+function notify(formElement) {
+    formElement.style = 'background-color: #ffb3b3; border-color: red';
+    alert(formElement.parentElement.innerText + ' ' + 'musi zostać wypełnione')
 }
